@@ -1,0 +1,11 @@
+body{
+        background:url('gmbg.gif');
+        font-family:'Code New Roman'!important;
+        color:white;
+        text-align:center;
+      }
+
+@font-face{
+  font-family:'Code New Roman';
+  src: url('Code New Roman.otf');
+}
