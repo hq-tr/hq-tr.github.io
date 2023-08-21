@@ -5,6 +5,14 @@ body{
         text-align:center;
       }
 
+a{
+  color:white!important;
+  text-decoration:underline;
+}
+
+a:hover{
+  color:yellow!important;
+}
 @font-face{
   font-family:'Code New Roman';
   src: url('Code New Roman.otf');
