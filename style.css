@@ -6,14 +6,33 @@ body{
       }
 
 a{
-  color:white!important;
   text-decoration:underline;
 }
 
-a:hover{
+.special-link{
+  color:white!important;
+}
+.special-link:hover{
   color:yellow!important;
 }
 @font-face{
   font-family:'Code New Roman';
   src: url('Code New Roman.otf');
+}
+
+.figure-box{
+  background-color:white;
+  color:black;
+  text-align:center;
+  padding: 11pt;
+  overflow:hidden;
+  margin:8pt;
+  float:left;
+  width:30%;
+}
+
+@media only screen and (max-width:768px){
+.figure-box{
+  width:100%!important;
+}
 }
