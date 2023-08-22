@@ -33,7 +33,10 @@ a{
 
 @media only screen and (max-width:768px){
 .figure-box{
-  margin-left:5%!important;
-  width:90%!important;
+  margin:0pt!important;
+  margin-left:5vw!important;
+  margin-top:8pt!important;
+  margin-bottom:8pt!important;
+  width:80vw!important;
 }
 }
