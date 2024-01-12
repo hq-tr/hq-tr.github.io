@@ -10,14 +10,32 @@ a{
 }
 
 .special-link{
-  color:white!important;
+  color:black!important;
 }
 .special-link:hover{
-  color:yellow!important;
+  color:blue!important;
 }
 @font-face{
   font-family:'Code New Roman';
   src: url('Code New Roman.otf');
+}
+
+.text-box{
+  width: 50vw;
+  margin-left:25vw;
+  padding:8px;
+  background-color:white;
+  color:black;
+  margin-top:16px;
+  margin-bottom:16px;
+  text-align:justified!important;
+  text-justify: inter-word!important;
+}
+
+.text-box-title{
+  width:100%;
+  color:white!important;
+  background-color:black!important;
 }
 
 .figure-box{
