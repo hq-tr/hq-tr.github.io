@@ -1,61 +1,97 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HQT's Home Page</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <!-- <link href="/style.css" rel="stylesheet" type="text/css" media="all">-->
+    <title>Content Switcher Example</title>
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <style>
-      
+        
+        /* Navigation links styling */
+        .nav-links {
+            margin-bottom: 8px;
+        }
+        
+        .nav-link {
+            padding: 5px 15px;
+            margin-right: 10px;
+            background-color: #010203;
+            text-decoration: none;
+            color: #f0f0f0;
+        }
+
+        .nav-link:hover{
+            color: red;
+        }
+        
+        .nav-link.active {
+            background-color: #f0f0f0;
+            color: #010203;
+        }
+        
+        /* Content box styling */
+        .content-box {
+            padding: 0px;
+            min-height: 200px;
+            background-color:none;
+            color:black!important;
+        }
+        
+        /* Initially hide all content sections except the first one */
+        .content-section:not(:first-child) {
+            display: none;
+        }
     </style>
-
-  </head>
-
-  <body>
-      <h1>Welcome to my Website!</h1>
-      <div class="text-box">
-    <h3 class="text-box-title">About</h3>
-      <p> I have recently successfully defended my PhD thesis at <a href="https://ntu.edu.sg/spms" target="_blank">Nanyang Technological University</a> in Singapore. In my thesis I investigated the dynamical and braiding properties of anyons (quasiholes) in fractional quantum Hall states. My research is focused on the traditional 2-dimensional electron gas (2DEG) in Gallium-Arsenide (GaAs) systems, and is based heavily on numerical calculations. At the moment I am interested in behaviours of non-Abelian anyons under realistic interactions, and I am looking for ways improve numerical routines, i.e. going to larger systems than before. So far, the latter tasks seem to need a lot of work, however. I am also interested in elementary excitations in other similar systems e.g. fractional Chern insulators.
-      </p>
+</head>
+<body>
+    <div class="header-box"><h1>Welcome to my Website!</h1></div>
+    <!-- Navigation links -->
+    <div class="nav-links">
+        <a href="#" class="nav-link active" data-target="about">About</a>
+        <a href="#" class="nav-link" data-target="research">Research</a>
+        <a href="#" class="nav-link" data-target="writings">Writings</a>
+        <a href="#" class="nav-link" data-target="music">Music</a>
     </div>
+    
+    <!-- Content sections -->
+    <div class="content-box">
+        <div class="content-section" id="about">
+            <div class = "text-box">
+                <h3 class="text-box-title">Welcome to my website!</h3>
+                <p>
+                I have recently successfully defended my PhD thesis at Nanyang Technological University in Singapore. In my thesis I investigated the dynamical and braiding properties of anyons (quasiholes) in fractional quantum Hall states. My research is focused on the traditional 2-dimensional electron gas (2DEG) in Gallium-Arsenide (GaAs) systems, and is based heavily on numerical calculations. At the moment I am interested in behaviours of non-Abelian anyons under realistic interactions, and I am looking for ways improve numerical routines, i.e. going to larger systems than before. So far, the latter tasks seem to need a lot of work, however. I am also interested in elementary excitations in other similar systems e.g. fractional Chern insulators.
+                </p>
+            </div>
+        </div>
+        
+        <div class="content-section" id="research">
+            <div class="text-box">
+                <h3 class="text-box-title">Research Highlights</h3>
+                <img src="Underconstruction_icon_gray.svg" alt = "An 'under construction' warning sign.">
+                <p>Under construction</p>
+            </div>
+            <div class="text-box">
+                <h3 class="text-box-title">Computation & Visualization Tools</h3>
+                <img src="Underconstruction_icon_gray.svg" alt = "An 'under construction' warning sign.">
+                <p>Under construction</p>
+            </div>
+        </div>
 
-    <div class="text-box">
-      <p>This site is under construction</p>
+        <div class="content-section" id="writings">
+            <div class="text-box">
+                <h3 class="text-box-title">Reseach Articles & Preprints</h3>
+                <p>See my articles on <a href="https://scholar.google.com/citations?user=y_c8JyAAAAAJ" target="_blank">Google Scholar</a> | <a href="https://arxiv.org/a/trung_h_1.html" target="_blank">arXiv</a></p>
+            </div>
+        </div>
 
-      <p>Meanwhile you can check out the links below</p>
-      <p style="list-style:none!important">
-        <a class="special-link" href="https://hqtr.wordpress.com" target="_blank">My blog</a><br/>
-        <a class="special-link" href="https://scholar.google.com/citations?user=y_c8JyAAAAAJ&hl=ja&oi=sra" target="_blank">My research</a><br/>
-        <a class="special-link" href="https://secondsoundstudio.com/" target="_blank">My music</a>
-      </p>
+        <div class="content-section" id="music">
+            <div class="text-box">
+                <h3 class="text-box-title">Music</h3>
+                <img src="Underconstruction_icon_gray.svg" alt = "An 'under construction' warning sign.">
+                <p>Under construction</p>
+            </div>
+        </div>
     </div>
-
-    <div class="text-box">
-        <h3>Here are some fun pictures</h3>
-    </div>
-
-    <div class="figure-box">
-      <script src="https://cdn.plot.ly/plotly-2.6.3.min.js"></script>    <div id="bbe57dcf-3945-460c-9587-dceda72e279c" style="width:600px;height:600px;"></div>
-      <script src="plotanyon.js"></script>
-
-
-    <p> Anyons on the sphere (dark-blue regions). Interactive plot created in Julia with <a href="https://plotly.com/julia/getting-started/" target="_blank">Plotly</a>. (On mobile you probably have to turn your device side-way to see the full plot.)</p>
-    </div>
-
-    <div class="figure-box">
-      <img src="Moore-Read.gif" width=100%/>
-      <p>Fixing the position of four Ising anyons (quasiholes of the Pfaffian state in this case) gives two orthonormal states. Here is what they look like on the disk. What does this tell us? Not much for now, but it's fun to look at.</p>
-    </div>
-
-    <div class="figure-box">
-      <img src="heros-live.jpg" width=100%/>
-      <p>I started growing my hair since around the start of <a href="https://en.wikipedia.org/wiki/COVID-19_pandemic" target="_blank">the pandemic</a> and ended up quite liking it. Here it is in action at Hero's Bar, Singapore (I'm in the center). Photo by <a href="https://atsu-singapore.jimdosite.com/" target="_blank">Atsusingapore</a></p>
-    </div>
-
 
     <div style="text-align:left!important;padding:32pt;clear:both">
       <hr/>
@@ -64,7 +100,37 @@
       <p>It's not that I don't know how to make a modern-looking website. I grew up with the internet in the 2000s and I like the look of the Old Web.</p>
 
     </div>
-  </body>
 
-
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get the target content ID from data attribute
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remove 'active' class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add 'active' class to the clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all content sections
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show the target content section
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+        });
+    </script>
+</body>
 </html>
