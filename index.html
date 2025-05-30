@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <div class="header-box"><h1>Welcome to my Website!</h1></div>
+    <div class="header-box"><h1>HQT's Home Page</h1></div>
     <!-- Navigation links -->
     <div class="nav-links">
         <a href="#" class="nav-link active" data-target="about">About</a>
@@ -66,7 +66,7 @@
         
         <div class="content-section" id="research-technical">
             <div class="text-box">
-                <div><a href="#" data-target="research-technical">Technical version</a> | <a href="#" data-target="research-laymen">Laymen version</a></div>
+                <div><a class = "secondary-nav-link active" href="#" data-target="research-technical">Technical version</a> | <a class = "secondary-nav-link" href="#" data-target="research-laymen">Laymen version</a></div>
                 <div>
                     <h3 class="text-box-title">Emergent Anyon Dynamics</h3>
                     <img src="Underconstruction_icon_gray.svg" alt = "An 'under construction' warning sign.">
@@ -77,10 +77,9 @@
 
         <div class="content-section" id="research-laymen">
             <div class="text-box">
-                <div><a href="#" data-target="research-technical">Technical version</a> | <a href="#" data-target="research-laymen">Laymen version</a></div>
+                <div><a class = "secondary-nav-link" href="#" data-target="research-technical">Technical version</a> | <a class = "secondary-nav-link active" href="#" data-target="research-laymen">Laymen version</a></div>
                 <div>
                     <h3 class="text-box-title">Emergent Anyon Dynamics</h3>
-                    <p>Anyon is cool</p>
                     <img src="Underconstruction_icon_gray.svg" alt = "An 'under construction' warning sign.">
                     <p>Under construction</p>
                 </div>
@@ -116,6 +115,35 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Get all navigation links
             const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get the target content ID from data attribute
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remove 'active' class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add 'active' class to the clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all content sections
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show the target content section
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.secondary-nav-link');
             
             // Add click event listener to each link
             navLinks.forEach(link => {
