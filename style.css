@@ -30,14 +30,32 @@ a{
   src: url('Code New Roman.otf');
 }
 
+.one-third-left{
+  float:left;
+  width: 30%!important;
+}
+
+.one-third-right{
+  float:right;
+  width: 30%!important;
+}
+
+.two-third{
+  float:left;
+  width: 60%!important;
+}
+
+.full-width{
+  width:100%;
+}
+
 .text-box{
-  width: 100%;
   padding:8px;
   background-color:white;
   color:black;
   margin-top:16px;
   margin-bottom:16px;
-  text-align:justified!important;
+  text-align:justified;
   text-justify: inter-word!important;
 }
 
@@ -47,18 +65,37 @@ a{
   background-color:black!important;
 }
 
+.text-box-subtitle{
+  width:50%;
+  color:white!important;
+  background-color:black!important;
+}
+
+.align-left{
+  text-align:left!important;
+}
+
+.align-right{
+  text-align:right!important;
+}
+
 .figure-box{
   background-color:white;
   color:black;
   text-align:center;
   padding: 0pt;
   overflow:hidden;
-  padding:11pt;
+  padding:15pt;
   margin:8pt;
   float:left;
   width:30%;
+  padding-top:25pt;
+  padding-bottom:25pt;
 }
 
+.figure-box img{
+  width:100%;
+}
 .figure-box-big{
   background-color:white;
   color:black;
@@ -68,6 +105,17 @@ a{
   float:left;
   width:100%;
 }
+
+.center-small-figure{
+  display: inline-block;
+  width:60%;
+  padding: 0 auto;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
+.center-small-figure img{
+  width:60%;
 }
 
 @media only screen and (max-width:768px){
@@ -79,7 +127,8 @@ body{
   margin-left:5vw!important;
   margin-top:8pt!important;
   margin-bottom:8pt!important;
-  width:80vw!important;
+  width:50vw!important;
+  float:none!important;
 }
 
 .text-box{
