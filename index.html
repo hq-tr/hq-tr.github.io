@@ -1,70 +1,221 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HQT's Home Page</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <!-- <link href="/style.css" rel="stylesheet" type="text/css" media="all">-->
+     <title>HQT's Home Page</title>
     <link href="style.css" rel="stylesheet" type="text/css" media="all">
     <style>
-      
+        
+        /* Navigation links styling */
+        .nav-links {
+            margin-bottom: 8px;
+        }
+        
+        .nav-link {
+            padding: 5px 15px;
+            margin-right: 10px;
+            background-color: #010203;
+            text-decoration: none;
+            color: #f0f0f0;
+        }
+
+        .nav-link:hover{
+            color: red;
+        }
+        
+        .nav-link.active {
+            background-color: #f0f0f0;
+            color: #010203;
+        }
+        
+        /* Content box styling */
+        .content-box {
+            padding: 0px;
+            min-height: 200px;
+            background-color:none;
+            color:black!important;
+        }
+        
+        /* Initially hide all content sections except the first one */
+        .content-section:not(:first-child) {
+            display: none;
+        }
     </style>
-
-  </head>
-
-  <body>
-      <h1>Welcome to my Website!</h1>
-      <div class="text-box">
-    <h3 class="text-box-title">About</h3>
-      <p> I have recently successfully defended my PhD thesis at <a href="https://ntu.edu.sg/spms" target="_blank">Nanyang Technological University</a> in Singapore. In my thesis I investigated the dynamical and braiding properties of anyons (quasiholes) in fractional quantum Hall states. My research is focused on the traditional 2-dimensional electron gas (2DEG) in Gallium-Arsenide (GaAs) systems, and is based heavily on numerical calculations. At the moment I am interested in behaviours of non-Abelian anyons under realistic interactions, and I am looking for ways improve numerical routines, i.e. going to larger systems than before. So far, the latter tasks seem to need a lot of work, however. I am also interested in elementary excitations in other similar systems e.g. fractional Chern insulators.
-      </p>
+</head>
+<body>
+    <div class="header-box"><h1>HQT's Home Page</h1></div>
+    <!-- Navigation links -->
+    <div class="nav-links">
+        <a href="#" class="nav-link active" data-target="about">About</a>
+        <a href="#" class="nav-link" data-target="research-technical">Research</a>
+        <a href="#" class="nav-link" data-target="writings">Writings</a>
+        <a href="#" class="nav-link" data-target="music">Music</a>
     </div>
+    
+    <!-- Content sections -->
+    <div class="content-box">
+        <div class="content-section" id="about">
+            <div class = "text-box full-width">
+                <h3 class="text-box-title">Welcome to my website!</h3>
+                <p>
+                I have recently successfully defended my PhD thesis at Nanyang Technological University in Singapore. In my thesis I investigated the dynamical and braiding properties of anyons (quasiholes) in fractional quantum Hall states. My research is focused on the traditional 2-dimensional electron gas (2DEG) in Gallium-Arsenide (GaAs) systems, and is based heavily on numerical calculations. At the moment I am interested in behaviours of non-Abelian anyons under realistic interactions, and I am looking for ways improve numerical routines, i.e. going to larger systems than before. So far, the latter tasks seem to need a lot of work, however. I am also interested in elementary excitations in other similar systems e.g. fractional Chern insulators.
+                </p>
+            </div>
+        </div>
+        
+        <div class="content-section" id="research-technical">
+            <div class="text-box full-width">
+                <div>
+                    <a class = "secondary-nav-link active" href="#" data-target="research-technical">Technical version</a> | <a class = "secondary-nav-link" href="#" data-target="research-laymen">Laymen version</a>
+                </div>
+                <div>
+                    <h3 class="text-box-title">Emergent Dynamics in Strongly Correlated Systems</h3>
+                    <div class="figure-box">
+                        <img src="fractionalization.png" alt = "An 'under construction' warning sign." alt = "An illustration taken from PRL 127 046402 showing fractionalization of Laughlin charge-e/3 quasiholes into charge-e/6 quasiholes">
+                        <a href="https://arxiv.org/abs/2009.14214" target="_blank">HQ Trung and B Yang, PRL 127, 046402 (2021)</a>
+                    </div>
+                    <div class="align-left">
+                        <p>I started my doctoral study on the fractional quantum Hall (FQH) effect at about the same time the modern understanding of <a href="https://doi.org/10.1142/S0217979222300031" target="_blank">conformal Hilbert space</a> started to materialize. A key idea of this approach is that quasihole excitations of a certain FQH phase serves as the fundamental degrees of freedom (DOF) describing all of its physics. "Fundamental DOF" is meant that within the low-energy manifold the quasiholes are the smallest indivisible (quasi)particle - to resolve it in more details requires going to higher energies. While this is the same starting point as most field theories, our aim is not to write down an effective theory by plain "guess work", but to establish a direct connection between the microscopic picture of interactions within the many-body system to the behavior of these emergent DOF.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-box-title">Anyons</h3>
+                    <div class="figure-box">
+                        <img src="MR_entanglement.png" alt="An illustration of an two-point quantum point contact inteferometry experiment, showing that the background anyons can influence the measurement via a long-range entanglement">
+                        <a href="https://arxiv.org/abs/2503.13380">HQ Trung et. al., PRB 122, 205101 (2025)</a>
+                    </div>
+                    <div class="align-left">
+                        <p>My current interest lies in theoretical and experimental aspects of non-Abelian anyons, in particular Majorana fermions and Fibonacci anyons. Of course, I am most comfortable talking about them in the context of FQH effect, but I also try to learn about their manifestation on platforms like spin chains or topological superconductor. Some theoretical questions include how non-Abelian anyon emerges from electron density waves in a two-dimensional electron gas (2DEG), the algebraic relationship between Abelian and non-Abelian CHS, and formulation of a non-Abelian spin-statistics relation. Interesting and important experimental aspects include understanding and exploiting anyon dynamics to design a stable non-Abelian braiding scheme. Recent conversations with a colleague also got me interested in thermalization properties of anyon systems, but that will be the topic for another time.</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-box-title">Computation & Visualization Tool</h3>
+                    <div class="figure-box">
+                        <img src="Moore-Read.gif" alt="An animated GIF showing the density of a two-dimensional electron gas in the Moore-Read state. There are four points of deficiency in the density, which are where four quasiholes are located. The GIF alternates between two different pictures, showing two degenerate non-Abelian states.">
+                    </div>
+                    <div class="align-left">
+                        <p>I write most of the numerical routines used in my research. There are also other people's codes that I have rewritten after the initial project with it was done. My general goal is to organize the routines in a modular way that makes sense to me. In my PhD years I have written two libraries for FQH research (one in Python and one in Julia) that have been enjoyed by several people. Working with microscopic models also means I get to make use of visualization tools to make abstract concepts seem more tangible, such as the plot of two degenerate states of four Moore-Read anyons seen in the figure on the left. All my codes are available publicly on my <a href="https:/github.com/hq-tr" target="_blank">Github repositories</a>. Should you want to learn to use them, please contact me directly as I am horrible at keeping documentaries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="text-box">
-      <p>This site is under construction</p>
+        <div class="content-section" id="research-laymen">
+            <div class="text-box full width">
+                <div><a class = "secondary-nav-link" href="#" data-target="research-technical">Technical version</a> | <a class = "secondary-nav-link active" href="#" data-target="research-laymen">Laymen version</a></div>
+                <div>
+                    <img src="Underconstruction_icon_gray.svg" alt = "An 'under construction' warning sign.">
+                    <p>Under construction</p>
+                </div>
+            </div>
+        </div>
 
-      <p>Meanwhile you can check out the links below</p>
-      <p style="list-style:none!important">
-        <a class="special-link" href="https://hqtr.wordpress.com" target="_blank">My blog</a><br/>
-        <a class="special-link" href="https://scholar.google.com/citations?user=y_c8JyAAAAAJ&hl=ja&oi=sra" target="_blank">My research</a><br/>
-        <a class="special-link" href="https://secondsoundstudio.com/" target="_blank">My music</a>
-      </p>
+        <div class="content-section" id="writings">
+            <div class="text-box full-width">
+                <h3 class="text-box-title">Research Articles & Preprints</h3>
+                <p>See my articles on <a href="https://scholar.google.com/citations?user=y_c8JyAAAAAJ" target="_blank">Google Scholar</a> | <a href="https://arxiv.org/a/trung_h_1.html" target="_blank">arXiv</a></p>
+            </div>
+        </div>
+
+        <div class="content-section" id="music">
+            <div class="text-box full-width">
+                <h3 class="text-box-title">Music</h3>
+                <p>At some point in the past, I decided that I will pursue music simultaneously with my research career. Here is some of what I have done so far.</p>
+                <p>All of my musical projects are published under the pseudonym <i>Tsuneko Ha</i> (also spelled <i>HaTsuneko</i> or <i>hatsuneko</i>).</p>
+
+                <div class="center-small-figure">
+                    <a href="https://secondsoundstudio.com" target="_blank"><img src="secondsound.png" alt="logo of Second Sound Studio"></a>
+                    <div class="align-left">
+                        <p>I currently run a personal mixing studio. I take on jobs as much as my research allows (which isn't much these days). Click on the logo above to see more.</p>
+                    </div>
+                </div>
+
+                <div class="center-small-figure">
+                    <a href="https://oreophilum.com" target="_blank"><img src="oreo_logo.png" alt="logo of Oreophilum"></a>
+                    <div class="align-left">
+                        <p>This is my first music project and it contains my personal highlight, which is the 26-minute song <a href="https://oreophilum.bandcamp.com/track/landscape-of-forever-changing" target="_blank">Landscape of Forever Changing</a>. It is the culmination of the study into the sonata form (see below) combined with elements of symphonic metal. In short, this is a classical symphony played on modern instruments.</p>
+                    </div>
+                </div>
+
+                <div class="center-small-figure">
+                    <iframe width=auto src="https://www.youtube.com/embed/USe_Ha6lBmg?si=SZZEdv2JndIKwR81" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="align-left"> 
+                        <p>I wrote and published a virtual piano realization of my first piano sonata. It is the outcome of a relatively long study (a little less than two years) of the sonata form, mainly following <i>Element of Sonata Theory</i> (Hepokoski and Darcy, 2001) as a reference. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="text-box">
-        <h3>Here are some fun pictures</h3>
-    </div>
-
-    <div class="figure-box">
-      <script src="https://cdn.plot.ly/plotly-2.6.3.min.js"></script>    <div id="bbe57dcf-3945-460c-9587-dceda72e279c" style="width:600px;height:600px;"></div>
-      <script src="plotanyon.js"></script>
-
-
-    <p> Anyons on the sphere (dark-blue regions). Interactive plot created in Julia with <a href="https://plotly.com/julia/getting-started/" target="_blank">Plotly</a>. (On mobile you probably have to turn your device side-way to see the full plot.)</p>
-    </div>
-
-    <div class="figure-box">
-      <img src="Moore-Read.gif" width=100%/>
-      <p>Fixing the position of four Ising anyons (quasiholes of the Pfaffian state in this case) gives two orthonormal states. Here is what they look like on the disk. What does this tell us? Not much for now, but it's fun to look at.</p>
-    </div>
-
-    <div class="figure-box">
-      <img src="heros-live.jpg" width=100%/>
-      <p>I started growing my hair since around the start of <a href="https://en.wikipedia.org/wiki/COVID-19_pandemic" target="_blank">the pandemic</a> and ended up quite liking it. Here it is in action at Hero's Bar, Singapore (I'm in the center). Photo by <a href="https://atsu-singapore.jimdosite.com/" target="_blank">Atsusingapore</a></p>
-    </div>
-
 
     <div style="text-align:left!important;padding:32pt;clear:both">
       <hr/>
       <img src="reverseearth.gif"/>
       <img src="blinkiesCafe-Nu.gif"/>
+      &copy; HQ Trung. All rights reserved.
       <p>It's not that I don't know how to make a modern-looking website. I grew up with the internet in the 2000s and I like the look of the Old Web.</p>
 
     </div>
-  </body>
 
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get the target content ID from data attribute
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remove 'active' class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add 'active' class to the clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all content sections
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show the target content section
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+        });
 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.secondary-nav-link');
+            
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Get the target content ID from data attribute
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Remove 'active' class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add 'active' class to the clicked link
+                    this.classList.add('active');
+                    
+                    // Hide all content sections
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show the target content section
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+        });
+    </script>
+</body>
 </html>
